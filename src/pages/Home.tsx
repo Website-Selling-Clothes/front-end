@@ -13,6 +13,9 @@ import Pants from '../assets/Icon/pants.svg'
 import Skirt from '../assets/Icon/skirt.svg'
 import TShirt from '../assets/Icon/tshirt.svg'
 
+{/*Banners*/}
+import banner from '../assets/Banners/banner.png'
+
 {/*Temp Product Img*/}
 import Product1 from '../assets/Temp_Products/Product_1.png'
 import Product2 from '../assets/Temp_Products/Product_2.png'
@@ -77,10 +80,10 @@ const Home = () => {
     <div>
       {/*Product Type*/}
 
-      <section className='font-victor'>
+      <section className='font-victor mb-4'>
         <div>
           <h1 className='text-[32px]'>Product Type</h1>
-          <div className='flex justify-between'>
+          <div className='flex justify-between m-2'>
             <div className='text-center'>
               <button>
                 <img src={Signature} alt="" />
@@ -130,8 +133,8 @@ const Home = () => {
       {/*Featured*/}
       <section>
         <h1 className='text-[32px] font-victor'>Special Price In December</h1>
-        <div>
-          <img src="" alt="" />
+        <div className='m-4 flex justify-center items-center'>
+          <img src={banner} alt="" />
         </div>
       </section>
 
@@ -142,7 +145,13 @@ const Home = () => {
             <h2 className='text-[32px]'>Sort By</h2>
             <button className='w-[185px] h-[56px] border rounded-[30px]'>Sales</button>
             <button className='w-[185px] h-[56px] border rounded-[30px]'>Latest</button>
-            <button className='w-[185px] h-[56px] border rounded-[30px]'>Price</button>
+            <div className='w-[185px] h-[56px] border rounded-[30px] flex justify-center items-center'>
+              <select>
+                <option value="Price">Price</option>
+                <option value="Increasing">Increasing</option>
+                <option value="Decreasing">Decreasing</option>
+              </select>
+            </div>
           </div>
 
           <div className='mt-6'>
@@ -155,7 +164,7 @@ const Home = () => {
                     <p className='font-vidaloka text-[#E12222]'>{product.price}</p>
                   </div>
                   <Link to={`/product/${product.id}`}>
-                    <button className='w-[185px] h-[56px] border rounded-[30px] bg-[#E12222] text-[16px] text-white font-victor'>
+                    <button className='w-[185px] h-[56px] border rounded-[30px] bg-[#E12222] text-[16px] text-white font-victor hover:bg-white hover:text-black'>
                       View Product
                     </button>
                   </Link>
