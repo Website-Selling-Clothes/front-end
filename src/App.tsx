@@ -4,12 +4,14 @@ import './App.css'
 import { AppProvider } from './contexts/AppContext'
 import ProtectedRoute from './components/ProtectedRoute'
 
+// Pages
+import Home from './pages/Home'
+
 // Layouts
 const MainLayout = lazy(() => import('./layouts/MainLayout'))
 const AdminLayout = lazy(() => import('./layouts/AdminLayout'))
 
 // Pages
-const Home = lazy(() => import('./pages/Home'))
 const Products = lazy(() => import('./pages/Products'))
 const ProductDetail = lazy(() => import('./pages/ProductDetail'))
 const Cart = lazy(() => import('./pages/Cart'))
