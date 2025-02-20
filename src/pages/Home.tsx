@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
 
+{/*React Icons*/}
+import { MdNavigateNext } from "react-icons/md";
+import { GrFormPrevious } from "react-icons/gr";
 
 {/*Product Type*/}
 import Signature from '../assets/Icon/signature.svg'
@@ -165,13 +168,14 @@ const Home = () => {
           </div>
       </section>
 
+      {/*Pagination*/}
       <div className='flex justify-center mt-20'>
-        <nav>
-          <button className='w-[64px] h-[64px] rounded-[100%] hover:bg-[#F3F3F3]'>P</button>
+        <nav className='flex'>
+          <button className='w-[64px] h-[64px] rounded-[100%] hover:bg-[#F3F3F3] flex justify-center items-center'><GrFormPrevious /></button>
           <button className='w-[64px] h-[64px] rounded-[100%] bg-[#F3F3F3]'>1</button>
           <button className='w-[64px] h-[64px] rounded-[100%] hover:bg-[#F3F3F3]'>2</button>
           <button className='w-[64px] h-[64px] rounded-[100%] hover:bg-[#F3F3F3]'>3</button>
-          <button className='w-[64px] h-[64px] rounded-[100%] hover:bg-[#F3F3F3]'>N</button>
+          <button className='w-[64px] h-[64px] rounded-[100%] hover:bg-[#F3F3F3] flex items-center justify-center'><MdNavigateNext /></button>
         </nav>
       </div>
 
