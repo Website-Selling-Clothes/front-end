@@ -4,11 +4,14 @@ import './App.css';
 import { AppProvider } from './contexts/AppContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
+// Pages
+import Home from './pages/Home'
+
 // Layouts
 const MainLayout = lazy(() => import('./layouts/MainLayout'));
 const AdminLayout = lazy(() => import('./layouts/AdminLayout'));
 
-// Pages
+
 const Home = lazy(() => import('./pages/Home'));
 const Products = lazy(() => import('./pages/Products'));
 const ProductDetail = lazy(() => import('./pages/ProductDetail'));
@@ -19,6 +22,7 @@ const Orders = lazy(() => import('./pages/Orders'));
 const AdminDashboard = lazy(() => import('./pages/admin/Dashboard'));
 const AdminProducts = lazy(() => import('./pages/admin/Products'));
 const AdminOrders = lazy(() => import('./pages/admin/Orders'));
+
 
 function App() {
   return (
