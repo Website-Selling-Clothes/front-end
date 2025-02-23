@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
 {/*React Icons*/}
 import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 {/*Product Type*/}
 import Signature from '../assets/Icon/signature.svg'
@@ -143,16 +145,17 @@ const Home = () => {
 
           <div className='w-[800px] font-victor flex justify-between'>
             <h2 className='text-[32px]'>Sort By</h2>
-            <button className='w-[185px] h-[56px] border rounded-[30px]'>Sales</button>
-            <button className='w-[185px] h-[56px] border rounded-[30px]'>Latest</button>
-            <div className='w-[185px] h-[56px] border rounded-[30px] flex justify-center items-center'>
-              <select>
-                <option value="Price">Price</option>
-                <option value="Increasing">Increasing</option>
-                <option value="Decreasing">Decreasing</option>
-              </select>
+            <button className='w-[185px] h-[56px] border rounded-[30px] text-[20px]'>Sales</button>
+            <button className='w-[185px] h-[56px] border rounded-[30px] text-[20px]'>Latest</button>
+            <div className='dropdown'>
+              <button className='w-[185px] h-[56px] text-[20px] border rounded-[30px] flex justify-center items-center'>Price<ChevronDownIcon className='w-4 h-4 ml-4' /></button>
+              <ul className='dropdown-content dropdown-bottom menu bg-white border rounded-[15px] w-52'>
+                <li><button className='text-[18px]'>Increasing </button></li>
+                <li><button className='text-[18px]'>Decreasing</button></li>
+              </ul>
             </div>
           </div>
+          
 
           <div className='mt-6'>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
@@ -163,14 +166,6 @@ const Home = () => {
                     <h3 className='w-[300px] overflow-ellipsis whitespace-nowrap font-victor'>{product.name}</h3>
                     <p className='font-vidaloka text-[#E12222]'>{product.price}</p>
                   </div>
-                  <Link to={`/product/${product.id}`}>
-                    <button className='w-[185px] h-[56px] border rounded-[30px] bg-[#E12222] text-[16px] text-white font-victor hover:bg-white hover:text-black'>
-                      View Product
-                    </button>
-                  </Link>
-                  {/* <button className=''>
-                    Add To Cart
-                  </button> */}
                 </div>
               ))}
             </div>
