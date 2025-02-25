@@ -82,21 +82,21 @@ const Home = () => {
     <div>
       {/*Product Type*/}
 
-      <section className='font-victor mb-4'>
+      <section className='font-victor mb-4 overflow-hidden'>
         <div>
           <h1 className='text-[32px]'>Product Type</h1>
-          <div className='flex justify-between m-2'>
+          <div className='flex justify-between text-[20px]'>
             <div className='text-center'>
               <button>
                 <img src={Signature} alt="" />
               </button>
-              <h2>Signature</h2>
+              <h2 className='text-[20px]'>Signature</h2>
             </div>
             <div className='text-center'>
               <button>
                 <img src={BackInStock} alt="" />
               </button>
-              <h2>back In Stock</h2>
+              <h2 className=''>Back In Stock</h2>
             </div>
             <div className='text-center'>
               <button>
@@ -160,11 +160,11 @@ const Home = () => {
           <div className='mt-6'>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
             {temp_Products.map(product => (
-                <div key={product.id} className='border flex flex-col justify-center items-center p-4'>
+                <div key={product.id} className='border flex flex-col justify-center items-center p-4 overflow-hidden'>
                   <img src={product.img} alt="" />
-                  <div className='w-[300px] m-4'>
-                    <h3 className='w-[300px] overflow-ellipsis whitespace-nowrap font-victor'>{product.name}</h3>
-                    <p className='font-vidaloka text-[#E12222]'>{product.price}</p>
+                  <div className='overflow-ellipsis whitespace-nowrap overflow-hidden font-victor text-base sm:text-lg pl-2'>
+                    <h3 className=' font-victor'>{product.name}</h3>
+                    <p className='font-vidaloka text-[#E12222] text-left'>{product.price}</p>
                   </div>
                 </div>
               ))}
