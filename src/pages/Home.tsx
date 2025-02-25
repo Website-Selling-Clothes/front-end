@@ -85,7 +85,7 @@ const Home = () => {
       <section className='font-victor mb-4 overflow-hidden'>
         <div>
           <h1 className='text-[32px]'>Product Type</h1>
-          <div className='flex justify-between text-[20px]'>
+          <div className='flex justify-between text-[20px] w-full sm:overflow-auto'>
             <div className='text-center'>
               <button>
                 <img src={Signature} alt="" />
@@ -158,14 +158,26 @@ const Home = () => {
           
 
           <div className='mt-6'>
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 '>
             {temp_Products.map(product => (
-                <div key={product.id} className='border flex flex-col justify-center items-center p-4 overflow-hidden'>
+                <div
+                key={product.id}
+                className='relative cursor-default border flex flex-col justify-center items-center p-4 overflow-hidden group hover:bg-gray-200'
+                >
                   <img src={product.img} alt="" />
                   <div className='overflow-ellipsis whitespace-nowrap overflow-hidden font-victor text-base sm:text-lg pl-2'>
                     <h3 className=' font-victor'>{product.name}</h3>
                     <p className='font-vidaloka text-[#E12222] text-left'>{product.price}</p>
                   </div>
+                  <button
+                   className='absolute top-[350px] left-[30px] border w-[150px] h-[50px] rounded-[15px] bg-green-400 opacity-0 group-hover:opacity-100 text-white font-poppins'
+                   >View Product
+                   </button>
+                   <button
+                    className='absolute top-[350px] left-[190px] border w-[150px] h-[50px] rounded-[15px] bg-red-500 opacity-0 group-hover:opacity-100 text-white font-poppins'
+                    >
+                    Add To Cart
+                   </button>
                 </div>
               ))}
             </div>

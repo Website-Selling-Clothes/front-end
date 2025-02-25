@@ -5,7 +5,7 @@ import { AppProvider } from './contexts/AppContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
 // Pages
-import Home from './pages/Home'
+const Home = lazy(() => import('./pages/Home'))
 
 // Layouts
 const MainLayout = lazy(() => import('./layouts/MainLayout'));

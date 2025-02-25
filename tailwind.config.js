@@ -8,6 +8,7 @@ module.exports = {
       fontFamily: {
         victor: ['"Victor Mono"', 'monospace'],
         vidaloka: ['Vidaloka', 'serif'],
+        poppins: ['Poppins','sans-serif'],
     },
   },
   },
