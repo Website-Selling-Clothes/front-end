@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
 {/*React Icons*/}
 import { MdNavigateNext } from "react-icons/md";
@@ -24,7 +23,13 @@ import Product2 from '../assets/Temp_Products/Product_2.png'
 import Product3 from '../assets/Temp_Products/Product_3.png'
 import Product4 from '../assets/Temp_Products/Product_4.png'
 
+
+
 const Home = () => {
+
+  function HandleAddToCart() {
+    alert('Added to your cart!');
+  }
 
   const temp_Products = [
     {
@@ -147,9 +152,9 @@ const Home = () => {
             <h2 className='text-[32px]'>Sort By</h2>
             <button className='w-[185px] h-[56px] border rounded-[30px] text-[20px]'>Sales</button>
             <button className='w-[185px] h-[56px] border rounded-[30px] text-[20px]'>Latest</button>
-            <div className='dropdown'>
-              <button className='w-[185px] h-[56px] text-[20px] border rounded-[30px] flex justify-center items-center'>Price<ChevronDownIcon className='w-4 h-4 ml-4' /></button>
-              <ul className='dropdown-content dropdown-bottom menu bg-white border rounded-[15px] w-52'>
+            <div className='dropdown dropdown-bottom'>
+              <button tabIndex='0' className='w-[185px] h-[56px] text-[20px] border rounded-[30px] flex justify-center items-center'>Price<ChevronDownIcon className='w-4 h-4 ml-4' /></button>
+              <ul tabIndex='0' className='z-[1] dropdown-content menu bg-white border rounded-[15px] w-52'>
                 <li><button className='text-[18px]'>Increasing </button></li>
                 <li><button className='text-[18px]'>Decreasing</button></li>
               </ul>
@@ -165,16 +170,19 @@ const Home = () => {
                 className='relative cursor-default border flex flex-col justify-center items-center p-4 overflow-hidden group hover:bg-gray-200'
                 >
                   <img src={product.img} alt="" />
-                  <div className='overflow-ellipsis whitespace-nowrap overflow-hidden font-victor text-base sm:text-lg pl-2'>
+                  <div className='overflow-ellipsis whitespace-nowrap overflow-hidden font-victor text-base'>
                     <h3 className=' font-victor'>{product.name}</h3>
                     <p className='font-vidaloka text-[#E12222] text-left'>{product.price}</p>
                   </div>
-                  <button
-                   className='absolute top-[350px] left-[30px] border w-[150px] h-[50px] rounded-[15px] bg-green-400 opacity-0 group-hover:opacity-100 text-white font-poppins'
-                   >View Product
-                   </button>
+                  <Link to='/ProductDetail'>
+                    <button
+                    className='absolute top-[350px] left-[30px] border w-[150px] h-[50px] rounded-[15px] bg-green-400 opacity-0 group-hover:opacity-100 hover:border-black text-white font-poppins'
+                    >View Product
+                    </button>
+                  </Link>
                    <button
-                    className='absolute top-[350px] left-[190px] border w-[150px] h-[50px] rounded-[15px] bg-red-500 opacity-0 group-hover:opacity-100 text-white font-poppins'
+                    onClick={HandleAddToCart}
+                    className='absolute top-[350px] left-[190px] border w-[150px] h-[50px] rounded-[15px] bg-red-500 opacity-0 group-hover:opacity-100 hover:border-black text-white font-poppins'
                     >
                     Add To Cart
                    </button>

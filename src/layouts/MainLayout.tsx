@@ -5,7 +5,7 @@ import Navbar from '../pages/Navbar'
 const MainLayout = () => {
   
   return (
-    <div className="main-layout">
+    <div className="main-layout min-h-screen bg-gray-50">
 
       <Navbar />
 
