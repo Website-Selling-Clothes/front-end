@@ -1,26 +1,27 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Suspense, lazy } from 'react'
-import './App.css'
-import { AppProvider } from './contexts/AppContext'
-import ProtectedRoute from './components/ProtectedRoute'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
+import './App.css';
+import { AppProvider } from './contexts/AppContext';
+import ProtectedRoute from './components/ProtectedRoute';
 
 // Pages
 import Home from './pages/Home'
 
 // Layouts
-const MainLayout = lazy(() => import('./layouts/MainLayout'))
-const AdminLayout = lazy(() => import('./layouts/AdminLayout'))
+const MainLayout = lazy(() => import('./layouts/MainLayout'));
+const AdminLayout = lazy(() => import('./layouts/AdminLayout'));
 
-// Pages
-const Products = lazy(() => import('./pages/Products'))
-const ProductDetail = lazy(() => import('./pages/ProductDetail'))
-const Cart = lazy(() => import('./pages/Cart'))
-const Login = lazy(() => import('./pages/Login'))
-const Register = lazy(() => import('./pages/Register'))
-const Orders = lazy(() => import('./pages/Orders'))
-const AdminDashboard = lazy(() => import('./pages/admin/Dashboard'))
-const AdminProducts = lazy(() => import('./pages/admin/Products'))
-const AdminOrders = lazy(() => import('./pages/admin/Orders'))
+
+const Products = lazy(() => import('./pages/Products'));
+const ProductDetail = lazy(() => import('./pages/ProductDetail'));
+const Cart = lazy(() => import('./pages/Cart'));
+const Login = lazy(() => import('./pages/Login'));
+const Register = lazy(() => import('./pages/Register'));
+const Orders = lazy(() => import('./pages/Orders'));
+const AdminDashboard = lazy(() => import('./pages/admin/Dashboard'));
+const AdminProducts = lazy(() => import('./pages/admin/Products'));
+const AdminOrders = lazy(() => import('./pages/admin/Orders'));
+
 
 function App() {
   return (
@@ -70,7 +71,7 @@ function App() {
         </Suspense>
       </Router>
     </AppProvider>
-  )
+  );
 }
 
-export default App
+export default App;
